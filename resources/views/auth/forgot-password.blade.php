@@ -32,8 +32,8 @@
                     value="{{ old('email') }}" 
                     required 
                     placeholder="nama@tokolily.com" 
-                    style="min-height: 54px;"
-                    class="w-full min-h-[54px] bg-[#f9dd9c]/30 border-2 border-[#1a4734] px-4 py-3.5 rounded-xl text-lg font-semibold text-[#1a4734] focus:outline-none focus:border-[#418b24]"
+                    style="min-height: 54px; border-radius: 8px;"
+                    class="w-full min-h-[54px] bg-[#f9dd9c]/30 border-2 border-[#1a4734] px-4 py-3.5 rounded-[8px] text-lg font-semibold text-[#1a4734] focus:outline-none focus:border-[#418b24]"
                 >
             </div>
 
@@ -41,8 +41,8 @@
             <div class="mb-6">
                 <button 
                     type="submit" 
-                    style="min-height: 55px; padding-top: 14px; padding-bottom: 17px;"
-                    class="w-full min-h-[55px] pt-3.5 pb-[17px] px-6 bg-[#e90c00] text-white rounded-xl font-black text-lg uppercase tracking-wider hover:opacity-95 active:scale-[0.99] transition-transform flex items-center justify-center text-center leading-normal shadow-sm"
+                    style="min-height: 55px; padding-top: 14px; padding-bottom: 17px; border-radius: 8px;"
+                    class="w-full min-h-[55px] pt-3.5 pb-[17px] px-6 bg-[#e90c00] text-white rounded-[8px] font-black text-lg uppercase tracking-wider hover:opacity-95 active:scale-[0.99] transition-transform flex items-center justify-center text-center leading-normal shadow-sm"
                 >
                     Lanjutkan Reset Password
                 </button>
