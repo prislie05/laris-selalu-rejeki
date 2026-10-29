@@ -94,9 +94,14 @@
             @endif
         </div>
 
-        <!-- Main Content Area (Lega dengan pb-28 agar konten bawah tidak terpotong navbar) -->
-        <main class="flex-1 w-full px-4 pb-28 pt-1">
+        <!-- Main Content Area -->
+        <main class="flex-1 w-full px-4 pt-1">
             @yield('content')
+
+            @auth
+            <!-- Spacer Pengaman Bawah agar seluruh fitur & tombol paling bawah 100% terlihat di atas Bottom Navbar saat di-scroll -->
+            <div style="height: 120px; width: 100%; min-height: 120px;" class="w-full flex-shrink-0 pointer-events-none" aria-hidden="true"></div>
+            @endauth
         </main>
 
         <!-- Bottom Navigation Bar (Fixed di bawah - 3 Menu Khusus Tiap Role) -->
