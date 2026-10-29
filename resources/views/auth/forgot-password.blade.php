@@ -1,7 +1,7 @@
 @extends('layouts.mobile', ['title' => 'Lupa Password - Toko Lily'])
 
 @section('content')
-<div class="my-auto py-6 w-full space-y-4">
+<div class="my-auto py-6 w-full space-y-5">
 
     <div class="bg-[#1a4734] text-white p-5 rounded-xl text-center border-2 border-[#1a4734]">
         <div class="w-16 h-16 bg-[#f9dd9c] text-[#1a4734] rounded-full mx-auto flex items-center justify-center font-black text-2xl mb-2.5 border-2 border-white">
@@ -14,41 +14,41 @@
     </div>
 
     <div class="bg-white p-6 rounded-xl border-2 border-[#1a4734]">
-        <h2 class="text-xl font-extrabold text-[#1a4734] mb-3 pb-3 border-b-2 border-[#1a4734]">
+        <h2 class="text-xl font-extrabold text-[#1a4734] mb-4 pb-3.5 border-b-2 border-[#1a4734]">
             Permintaan Reset Kata Sandi
         </h2>
-        <p class="text-base text-gray-700 mb-5 leading-relaxed">
+        <p class="text-base text-gray-700 mb-6 leading-relaxed">
             Masukkan alamat email yang terdaftar. Sistem akan memverifikasi email Anda untuk melanjutkan perubahan kata sandi.
         </p>
 
-        <form action="{{ route('password.email') }}" method="POST" class="space-y-4">
+        <form action="{{ route('password.email') }}" method="POST">
             @csrf
 
-            <div>
-                <label class="block text-base font-bold text-[#1a4734] mb-1.5">Email Terdaftar</label>
+            <div class="mb-6">
+                <label class="block text-base font-bold text-[#1a4734] mb-2">Email Terdaftar</label>
                 <input 
                     type="email" 
                     name="email" 
                     value="{{ old('email') }}" 
                     required 
                     placeholder="nama@tokolily.com" 
-                    class="w-full bg-[#f9dd9c]/30 border-2 border-[#1a4734] px-4 py-3 rounded-lg text-lg font-semibold text-[#1a4734] focus:outline-none focus:border-[#418b24]"
+                    class="w-full bg-[#f9dd9c]/30 border-2 border-[#1a4734] px-4 py-3.5 rounded-xl text-lg font-semibold text-[#1a4734] focus:outline-none focus:border-[#418b24]"
                 >
             </div>
 
             <!-- Tombol Lanjutkan Reset Password: diperlebar 3px ke bawah & teks center di tengah -->
-            <div class="pt-2">
+            <div class="mb-6">
                 <button 
                     type="submit" 
                     style="min-height: 55px; padding-top: 14px; padding-bottom: 17px;"
-                    class="w-full min-h-[55px] pt-3.5 pb-[17px] px-6 bg-[#e90c00] text-white rounded-lg font-black text-lg uppercase tracking-wider hover:opacity-95 active:scale-[0.99] transition-transform flex items-center justify-center text-center leading-normal shadow-sm"
+                    class="w-full min-h-[55px] pt-3.5 pb-[17px] px-6 bg-[#e90c00] text-white rounded-xl font-black text-lg uppercase tracking-wider hover:opacity-95 active:scale-[0.99] transition-transform flex items-center justify-center text-center leading-normal shadow-sm"
                 >
                     Lanjutkan Reset Password
                 </button>
             </div>
         </form>
 
-        <div class="mt-5 pt-4 border-t-2 border-gray-100 text-center">
+        <div class="mt-6 pt-5 border-t-2 border-gray-100 text-center">
             <a href="{{ route('login') }}" class="text-base font-extrabold text-[#1a4734] hover:underline inline-flex items-center justify-center space-x-1">
                 <span>&larr; Kembali ke Halaman Login</span>
             </a>
