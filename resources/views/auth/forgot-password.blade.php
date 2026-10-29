@@ -1,7 +1,7 @@
 @extends('layouts.mobile', ['title' => 'Lupa Password - Toko Lily'])
 
 @section('content')
-<div class="pt-4 pb-8 space-y-5">
+<div class="my-auto py-6 space-y-5">
 
     <div class="bg-[#1a4734] text-white p-6 rounded-xl text-center border-2 border-[#1a4734]">
         <div class="w-16 h-16 bg-[#f9dd9c] text-[#1a4734] rounded-full mx-auto flex items-center justify-center font-black text-2xl mb-3 border-2 border-white">
@@ -13,6 +13,7 @@
         <p class="text-sm font-semibold text-gray-200 mt-1">Tersedia untuk Pengguna, Seller, dan Admin</p>
     </div>
 
+    <!-- Forgot Password Card (Center ke Tengah) -->
     <div class="bg-white p-6 rounded-xl border-2 border-[#1a4734]">
         <h2 class="text-xl font-extrabold text-[#1a4734] mb-3 pb-3 border-b-2 border-[#1a4734]">
             Permintaan Reset Kata Sandi
@@ -37,7 +38,11 @@
             </div>
 
             <div class="pt-2">
-                <button type="submit" class="w-full min-h-[52px] bg-[#e90c00] text-white py-3.5 px-4 rounded-lg font-black text-lg uppercase tracking-wider hover:opacity-95 active:scale-[0.99] transition-transform">
+                <button 
+                    type="submit" 
+                    style="min-height: 55px; padding-bottom: 17px;"
+                    class="w-full min-h-[55px] bg-[#e90c00] text-white pt-3.5 pb-[17px] px-4 rounded-lg font-black text-lg uppercase tracking-wider hover:opacity-95 active:scale-[0.99] transition-transform flex items-center justify-center shadow-sm"
+                >
                     Lanjutkan Reset Password
                 </button>
             </div>

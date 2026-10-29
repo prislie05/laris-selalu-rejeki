@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="h-full bg-[#f9dd9c]" style="background-color: #f9dd9c;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -21,10 +21,10 @@
         }
     </style>
 </head>
-<body class="bg-[#f0f2f5] text-[#1a4734] antialiased" x-data="{ showProfileModal: false }">
+<body class="bg-[#f9dd9c] text-[#1a4734] antialiased min-h-screen flex flex-col" style="background-color: #f9dd9c; min-height: 100vh;" x-data="{ showProfileModal: false }">
 
     <!-- Universal Fluid Mobile Container (320px - 480px+) -->
-    <div class="w-full max-w-[480px] min-h-[100dvh] mx-auto overflow-x-hidden flex flex-col justify-between shadow-none border-x-2 border-[#1a4734] bg-[#f9dd9c] relative">
+    <div class="w-full max-w-[480px] min-h-screen min-h-[100dvh] mx-auto overflow-x-hidden flex flex-col flex-1 shadow-none border-x-2 border-[#1a4734] bg-[#f9dd9c] relative" style="background-color: #f9dd9c; min-height: 100vh;">
 
         <!-- Top App Bar (Semua Role) -->
         <header class="w-full bg-[#1a4734] text-white px-4 py-3.5 sticky top-0 z-30 flex items-center justify-between border-b-2 border-[#1a4734]">
@@ -95,7 +95,7 @@
         </div>
 
         <!-- Main Content Area -->
-        <main class="flex-1 w-full px-4 pt-1">
+        <main class="flex-1 w-full px-4 pt-1 flex flex-col">
             @yield('content')
 
             @auth

@@ -1,13 +1,14 @@
 @extends('layouts.mobile', ['title' => 'Buat Password Baru - Toko Lily'])
 
 @section('content')
-<div class="pt-4 pb-8 space-y-5">
+<div class="my-auto py-6 space-y-5">
 
     <div class="bg-[#1a4734] text-white p-6 rounded-xl text-center border-2 border-[#1a4734]">
         <h1 class="text-2xl font-black text-[#f9dd9c] tracking-wide">BUAT KATA SANDI BARU</h1>
         <p class="text-sm font-semibold text-gray-200 mt-1">Perbarui kata sandi akun Anda</p>
     </div>
 
+    <!-- Reset Password Card (Center ke Tengah) -->
     <div class="bg-white p-6 rounded-xl border-2 border-[#1a4734]">
         <form action="{{ route('password.update') }}" method="POST" class="space-y-4">
             @csrf
@@ -49,7 +50,11 @@
             </div>
 
             <div class="pt-2">
-                <button type="submit" class="w-full min-h-[52px] bg-[#418b24] text-white py-3.5 px-4 rounded-lg font-black text-lg uppercase tracking-wider hover:opacity-95 active:scale-[0.99] transition-transform">
+                <button 
+                    type="submit" 
+                    style="min-height: 55px; padding-bottom: 17px;"
+                    class="w-full min-h-[55px] bg-[#418b24] text-white pt-3.5 pb-[17px] px-4 rounded-lg font-black text-lg uppercase tracking-wider hover:opacity-95 active:scale-[0.99] transition-transform flex items-center justify-center shadow-sm"
+                >
                     Simpan Password & Login
                 </button>
             </div>
