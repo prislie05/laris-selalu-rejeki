@@ -8,7 +8,7 @@
         <div class="w-16 h-16 bg-[#f9dd9c] text-[#1a4734] rounded-full mx-auto flex items-center justify-center font-black text-3xl mb-2.5 border-2 border-white">
             TL
         </div>
-        <h1 class="text-2xl font-black text-[#f9dd9c] tracking-wide">DAFTAR PELANGGAN</h1>
+        <h1 class="text-2xl font-black text-[#f9dd9c] tracking-wide">Hi, Selamat Datang</h1>
         <p class="text-sm font-semibold text-gray-200 mt-0.5">Buat akun untuk mulai berbelanja di Toko Lily</p>
     </div>
 
