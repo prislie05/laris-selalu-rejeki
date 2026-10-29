@@ -32,7 +32,8 @@
                     value="{{ old('email') }}" 
                     required 
                     placeholder="nama@tokolily.com" 
-                    class="w-full bg-[#f9dd9c]/30 border-2 border-[#1a4734] px-4 py-3.5 rounded-xl text-lg font-semibold text-[#1a4734] focus:outline-none focus:border-[#418b24]"
+                    style="min-height: 54px;"
+                    class="w-full min-h-[54px] bg-[#f9dd9c]/30 border-2 border-[#1a4734] px-4 py-3.5 rounded-xl text-lg font-semibold text-[#1a4734] focus:outline-none focus:border-[#418b24]"
                 >
             </div>
 
