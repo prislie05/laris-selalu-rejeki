@@ -1,19 +1,18 @@
 @extends('layouts.mobile', ['title' => 'Lupa Password - Toko Lily'])
 
 @section('content')
-<div class="my-auto py-6 space-y-5">
+<div class="my-auto py-6 w-full space-y-4">
 
-    <div class="bg-[#1a4734] text-white p-6 rounded-xl text-center border-2 border-[#1a4734]">
-        <div class="w-16 h-16 bg-[#f9dd9c] text-[#1a4734] rounded-full mx-auto flex items-center justify-center font-black text-2xl mb-3 border-2 border-white">
+    <div class="bg-[#1a4734] text-white p-5 rounded-xl text-center border-2 border-[#1a4734]">
+        <div class="w-16 h-16 bg-[#f9dd9c] text-[#1a4734] rounded-full mx-auto flex items-center justify-center font-black text-2xl mb-2.5 border-2 border-white">
             <svg class="w-8 h-8 text-[#1a4734]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
             </svg>
         </div>
         <h1 class="text-2xl font-black text-[#f9dd9c] tracking-wide">RESET PASSWORD</h1>
-        <p class="text-sm font-semibold text-gray-200 mt-1">Tersedia untuk Pengguna, Seller, dan Admin</p>
+        <p class="text-sm font-semibold text-gray-200 mt-0.5">Tersedia untuk Pengguna, Seller, dan Admin</p>
     </div>
 
-    <!-- Forgot Password Card (Center ke Tengah) -->
     <div class="bg-white p-6 rounded-xl border-2 border-[#1a4734]">
         <h2 class="text-xl font-extrabold text-[#1a4734] mb-3 pb-3 border-b-2 border-[#1a4734]">
             Permintaan Reset Kata Sandi
@@ -37,18 +36,19 @@
                 >
             </div>
 
+            <!-- Tombol Lanjutkan Reset Password: diperlebar 3px ke bawah & teks center di tengah -->
             <div class="pt-2">
                 <button 
                     type="submit" 
-                    style="min-height: 55px; padding-bottom: 17px;"
-                    class="w-full min-h-[55px] bg-[#e90c00] text-white pt-3.5 pb-[17px] px-4 rounded-lg font-black text-lg uppercase tracking-wider hover:opacity-95 active:scale-[0.99] transition-transform flex items-center justify-center shadow-sm"
+                    style="min-height: 55px; padding-top: 14px; padding-bottom: 17px;"
+                    class="w-full min-h-[55px] pt-3.5 pb-[17px] px-6 bg-[#e90c00] text-white rounded-lg font-black text-lg uppercase tracking-wider hover:opacity-95 active:scale-[0.99] transition-transform flex items-center justify-center text-center leading-normal shadow-sm"
                 >
                     Lanjutkan Reset Password
                 </button>
             </div>
         </form>
 
-        <div class="mt-6 pt-4 border-t-2 border-gray-100 text-center">
+        <div class="mt-5 pt-4 border-t-2 border-gray-100 text-center">
             <a href="{{ route('login') }}" class="text-base font-extrabold text-[#1a4734] hover:underline inline-flex items-center justify-center space-x-1">
                 <span>&larr; Kembali ke Halaman Login</span>
             </a>

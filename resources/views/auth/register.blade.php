@@ -1,20 +1,20 @@
 @extends('layouts.mobile', ['title' => 'Daftar Akun - Toko Lily'])
 
 @section('content')
-<div class="my-auto py-6 space-y-5">
+<div class="my-auto py-6 w-full space-y-4">
 
     <!-- Store Brand Header -->
-    <div class="bg-[#1a4734] text-white p-6 rounded-xl text-center border-2 border-[#1a4734]">
-        <div class="w-16 h-16 bg-[#f9dd9c] text-[#1a4734] rounded-full mx-auto flex items-center justify-center font-black text-3xl mb-3 border-2 border-white">
+    <div class="bg-[#1a4734] text-white p-5 rounded-xl text-center border-2 border-[#1a4734]">
+        <div class="w-16 h-16 bg-[#f9dd9c] text-[#1a4734] rounded-full mx-auto flex items-center justify-center font-black text-3xl mb-2.5 border-2 border-white">
             TL
         </div>
         <h1 class="text-2xl font-black text-[#f9dd9c] tracking-wide">DAFTAR PELANGGAN</h1>
-        <p class="text-sm font-semibold text-gray-200 mt-1">Buat akun untuk mulai berbelanja di Toko Lily</p>
+        <p class="text-sm font-semibold text-gray-200 mt-0.5">Buat akun untuk mulai berbelanja di Toko Lily</p>
     </div>
 
-    <!-- Registration Form Card (Center ke Tengah) -->
+    <!-- Registration Form Card -->
     <div class="bg-white p-6 rounded-xl border-2 border-[#1a4734]">
-        <h2 class="text-xl font-extrabold text-[#1a4734] mb-5 pb-3 border-b-2 border-[#1a4734] flex items-center space-x-2">
+        <h2 class="text-xl font-extrabold text-[#1a4734] mb-4 pb-3 border-b-2 border-[#1a4734] flex items-center space-x-2">
             <svg class="w-6 h-6 text-[#418b24]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
             </svg>
@@ -81,18 +81,19 @@
                 >
             </div>
 
-            <div class="pt-3">
+            <!-- Tombol Daftar & Masuk Otomatis: diperlebar 3px ke bawah & teks center di tengah -->
+            <div class="pt-2">
                 <button 
                     type="submit" 
-                    style="min-height: 55px; padding-bottom: 17px;"
-                    class="w-full min-h-[55px] bg-[#418b24] text-white pt-3.5 pb-[17px] px-4 rounded-lg font-black text-lg uppercase tracking-wider hover:opacity-95 active:scale-[0.99] transition-transform flex items-center justify-center shadow-sm"
+                    style="min-height: 55px; padding-top: 14px; padding-bottom: 17px;"
+                    class="w-full min-h-[55px] pt-3.5 pb-[17px] px-6 bg-[#418b24] text-white rounded-lg font-black text-lg uppercase tracking-wider hover:opacity-95 active:scale-[0.99] transition-transform flex items-center justify-center text-center leading-normal shadow-sm"
                 >
                     Daftar & Masuk Otomatis
                 </button>
             </div>
         </form>
 
-        <div class="mt-6 pt-4 border-t-2 border-gray-100 text-center">
+        <div class="mt-5 pt-4 border-t-2 border-gray-100 text-center">
             <p class="text-base text-[#1a4734]">
                 Sudah memiliki akun?
                 <a href="{{ route('login') }}" class="font-extrabold text-[#418b24] hover:underline ml-1">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="h-full bg-[#f9dd9c]" style="background-color: #f9dd9c;">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -11,6 +11,13 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
+        html, body {
+            height: 100%;
+            min-height: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
+            background-color: #f9dd9c;
+        }
         [x-cloak] { display: none !important; }
         .no-scrollbar::-webkit-scrollbar {
             display: none;
@@ -21,10 +28,10 @@
         }
     </style>
 </head>
-<body class="bg-[#f9dd9c] text-[#1a4734] antialiased min-h-screen flex flex-col" style="background-color: #f9dd9c; min-height: 100vh;" x-data="{ showProfileModal: false }">
+<body class="bg-[#f9dd9c] text-[#1a4734] antialiased min-h-screen flex flex-col" x-data="{ showProfileModal: false }">
 
     <!-- Universal Fluid Mobile Container (320px - 480px+) -->
-    <div class="w-full max-w-[480px] min-h-screen min-h-[100dvh] mx-auto overflow-x-hidden flex flex-col flex-1 shadow-none border-x-2 border-[#1a4734] bg-[#f9dd9c] relative" style="background-color: #f9dd9c; min-height: 100vh;">
+    <div class="w-full max-w-[480px] min-h-screen mx-auto overflow-x-hidden flex flex-col justify-between shadow-none border-x-2 border-[#1a4734] bg-[#f9dd9c] relative" style="min-height: 100vh; min-height: 100dvh;">
 
         <!-- Top App Bar (Semua Role) -->
         <header class="w-full bg-[#1a4734] text-white px-4 py-3.5 sticky top-0 z-30 flex items-center justify-between border-b-2 border-[#1a4734]">
