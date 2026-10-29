@@ -142,8 +142,6 @@ class DatabaseSeeder extends Seeder
                 'description' => 'Sabun batang perlindungan kuman total dengan formula antibakterial.',
                 'price' => 16000,
                 'stock' => 15,
-                'image_url' => 'https://images.unsplash.com/photo-1607006314181-e2311bca03f8?auto=format&fit=crop&w=400&q=80',
-                'is_active' => true,
             ],
             [
                 'name' => 'Deterjen Daia 850g',
@@ -152,8 +150,6 @@ class DatabaseSeeder extends Seeder
                 'description' => 'Deterjen bubuk dengan butiran pembersih konsentrat wangi tahan lama.',
                 'price' => 19500,
                 'stock' => 12,
-                'image_url' => 'https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=400&q=80',
-                'is_active' => true,
             ],
         ];
 

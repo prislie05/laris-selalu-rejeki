@@ -51,51 +51,40 @@
     <div class="space-y-4">
         @forelse($products as $prod)
             <div class="bg-white rounded-xl border-2 border-[#1a4734] p-4 flex flex-col justify-between shadow-sm">
-                <div class="flex space-x-3.5">
-                    <!-- Product Image -->
-                    <div class="w-24 h-24 bg-[#f9dd9c]/40 rounded-lg border-2 border-[#1a4734] overflow-hidden flex-shrink-0 flex items-center justify-center">
-                        @if($prod->image_url)
-                            <img src="{{ $prod->image_url }}" alt="{{ $prod->name }}" class="w-full h-full object-cover">
+                <!-- Product Information -->
+                <div class="min-w-0">
+                    <div class="flex flex-wrap items-center justify-between gap-1 mb-2">
+                        <span class="text-xs font-black px-2.5 py-0.5 rounded bg-[#f9dd9c] text-[#1a4734] uppercase border border-[#1a4734]/30">
+                            {{ $prod->category }}
+                        </span>
+                        @if($prod->stock <= 0)
+                            <span class="text-sm font-black px-2.5 py-1 rounded bg-[#870903] text-white">
+                                STOK HABIS
+                            </span>
+                        @elseif($prod->stock <= 5)
+                            <span class="text-sm font-black px-2.5 py-1 rounded bg-[#e90c00] text-white">
+                                Sisa {{ $prod->stock }}
+                            </span>
                         @else
-                            <span class="font-black text-[#1a4734] text-sm">TOKO LILY</span>
+                            <span class="text-sm font-bold text-gray-600">
+                                Stok: {{ $prod->stock }}
+                            </span>
                         @endif
                     </div>
 
-                    <!-- Product Information -->
-                    <div class="flex-1 min-w-0">
-                        <div class="flex flex-wrap items-center justify-between gap-1 mb-1">
-                            <span class="text-xs font-black px-2.5 py-0.5 rounded bg-[#f9dd9c] text-[#1a4734] uppercase border border-[#1a4734]/30">
-                                {{ $prod->category }}
-                            </span>
-                            @if($prod->stock <= 0)
-                                <span class="text-sm font-black px-2.5 py-1 rounded bg-[#870903] text-white">
-                                    STOK HABIS
-                                </span>
-                            @elseif($prod->stock <= 5)
-                                <span class="text-sm font-black px-2.5 py-1 rounded bg-[#e90c00] text-white">
-                                    Sisa {{ $prod->stock }}
-                                </span>
-                            @else
-                                <span class="text-sm font-bold text-gray-600">
-                                    Stok: {{ $prod->stock }}
-                                </span>
-                            @endif
-                        </div>
+                    <!-- Nama Barang: 20px - 22px font-bold -->
+                    <h3 class="font-bold text-xl text-[#1a4734] leading-tight break-words">
+                        {{ $prod->name }}
+                    </h3>
 
-                        <!-- Nama Barang: 20px - 22px font-bold -->
-                        <h3 class="font-bold text-xl text-[#1a4734] leading-tight break-words">
-                            {{ $prod->name }}
-                        </h3>
+                    <!-- Deskripsi: 18px leading-relaxed -->
+                    <p class="text-base text-gray-700 leading-relaxed mt-1 line-clamp-2">
+                        {{ $prod->description ?? 'Barang kebutuhan harian pilihan Toko Lily' }}
+                    </p>
 
-                        <!-- Deskripsi: 18px leading-relaxed -->
-                        <p class="text-base text-gray-700 leading-relaxed mt-1 line-clamp-2">
-                            {{ $prod->description ?? 'Barang kebutuhan harian pilihan Toko Lily' }}
-                        </p>
-
-                        <!-- Harga: 24px - 28px font-extrabold -->
-                        <div class="mt-2 font-black text-2xl text-[#870903]">
-                            Rp {{ number_format($prod->price, 0, ',', '.') }}
-                        </div>
+                    <!-- Harga: 24px - 28px font-extrabold -->
+                    <div class="mt-2 font-black text-2xl text-[#870903]">
+                        Rp {{ number_format($prod->price, 0, ',', '.') }}
                     </div>
                 </div>
 

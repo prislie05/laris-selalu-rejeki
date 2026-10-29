@@ -19,6 +19,7 @@ Route::get('/', function () {
         default => redirect()->route('user.shop'),
     };
 });
+Route::get('/home', fn () => redirect('/'));
 
 // Authentication routes
 Route::middleware('guest')->group(function () {

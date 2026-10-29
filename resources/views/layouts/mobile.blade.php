@@ -94,23 +94,23 @@
             @endif
         </div>
 
-        <!-- Main Content Area (Lega dengan pb-32 agar konten bawah tidak terpotong navbar) -->
-        <main class="flex-1 w-full px-4 pb-32 pt-1">
+        <!-- Main Content Area (Lega dengan pb-28 agar konten bawah tidak terpotong navbar) -->
+        <main class="flex-1 w-full px-4 pb-28 pt-1">
             @yield('content')
         </main>
 
         <!-- Bottom Navigation Bar (Fixed di bawah - 3 Menu Khusus Tiap Role) -->
         @auth
-        <nav class="fixed bottom-0 w-full max-w-[480px] bg-[#1a4734] border-t-2 border-[#1a4734] z-40">
-            <div class="grid grid-cols-3 h-20">
+        <nav class="fixed bottom-0 left-0 right-0 w-full max-w-[480px] mx-auto bg-[#1a4734] border-t-2 border-[#143728] z-40 shadow-xl">
+            <div class="grid grid-cols-3 h-16">
                 @if(Auth::user()->isUser())
                     <!-- USER MENU 1: Belanja -->
                     @php $isShop = request()->routeIs('user.shop'); @endphp
-                    <a href="{{ route('user.shop') }}" class="flex flex-col items-center justify-center gap-1.5 py-2.5 {{ $isShop ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <a href="{{ route('user.shop') }}" class="flex flex-col items-center justify-center py-1 {{ $isShop ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
+                        <svg class="w-6 h-6 flex-shrink-0" width="24" height="24" style="width: 24px; height: 24px; min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                         </svg>
-                        <span class="text-[15px] leading-tight">Belanja</span>
+                        <span class="text-xs font-bold leading-tight mt-0.5">Belanja</span>
                     </a>
 
                     <!-- USER MENU 2: Keranjang -->
@@ -118,83 +118,83 @@
                         $isCart = request()->routeIs('user.cart'); 
                         $cartQty = \App\Models\Cart::where('user_id', Auth::id())->sum('quantity');
                     @endphp
-                    <a href="{{ route('user.cart') }}" class="flex flex-col items-center justify-center gap-1.5 py-2.5 relative {{ $isCart ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
+                    <a href="{{ route('user.cart') }}" class="flex flex-col items-center justify-center py-1 relative {{ $isCart ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
                         <div class="relative">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <svg class="w-6 h-6 flex-shrink-0" width="24" height="24" style="width: 24px; height: 24px; min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
                             </svg>
                             @if($cartQty > 0)
-                                <span class="absolute -top-1.5 -right-3 bg-[#e90c00] text-white text-xs font-black min-w-5 h-5 px-1 rounded-full flex items-center justify-center border border-white">
+                                <span class="absolute -top-1.5 -right-2.5 bg-[#e90c00] text-white text-[11px] font-black min-w-4 h-4 px-1 rounded-full flex items-center justify-center border border-white">
                                     {{ $cartQty > 99 ? '99+' : $cartQty }}
                                 </span>
                             @endif
                         </div>
-                        <span class="text-[15px] leading-tight">Keranjang</span>
+                        <span class="text-xs font-bold leading-tight mt-0.5">Keranjang</span>
                     </a>
 
                     <!-- USER MENU 3: History -->
                     @php $isHist = request()->routeIs('user.history'); @endphp
-                    <a href="{{ route('user.history') }}" class="flex flex-col items-center justify-center gap-1.5 py-2.5 {{ $isHist ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <a href="{{ route('user.history') }}" class="flex flex-col items-center justify-center py-1 {{ $isHist ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
+                        <svg class="w-6 h-6 flex-shrink-0" width="24" height="24" style="width: 24px; height: 24px; min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        <span class="text-[15px] leading-tight">History</span>
+                        <span class="text-xs font-bold leading-tight mt-0.5">History</span>
                     </a>
 
                 @elseif(Auth::user()->isSeller())
                     <!-- SELLER MENU 1: Toko -->
                     @php $isShop = request()->routeIs('seller.shop'); @endphp
-                    <a href="{{ route('seller.shop') }}" class="flex flex-col items-center justify-center gap-1.5 py-2.5 {{ $isShop ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <a href="{{ route('seller.shop') }}" class="flex flex-col items-center justify-center py-1 {{ $isShop ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
+                        <svg class="w-6 h-6 flex-shrink-0" width="24" height="24" style="width: 24px; height: 24px; min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                         </svg>
-                        <span class="text-[15px] leading-tight">Toko</span>
+                        <span class="text-xs font-bold leading-tight mt-0.5">Toko</span>
                     </a>
 
                     <!-- SELLER MENU 2: Edit -->
                     @php $isEdit = request()->routeIs('seller.products'); @endphp
-                    <a href="{{ route('seller.products') }}" class="flex flex-col items-center justify-center gap-1.5 py-2.5 {{ $isEdit ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <a href="{{ route('seller.products') }}" class="flex flex-col items-center justify-center py-1 {{ $isEdit ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
+                        <svg class="w-6 h-6 flex-shrink-0" width="24" height="24" style="width: 24px; height: 24px; min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
                         </svg>
-                        <span class="text-[15px] leading-tight">Edit</span>
+                        <span class="text-xs font-bold leading-tight mt-0.5">Edit</span>
                     </a>
 
                     <!-- SELLER MENU 3: History -->
                     @php $isHist = request()->routeIs('seller.history'); @endphp
-                    <a href="{{ route('seller.history') }}" class="flex flex-col items-center justify-center gap-1.5 py-2.5 {{ $isHist ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <a href="{{ route('seller.history') }}" class="flex flex-col items-center justify-center py-1 {{ $isHist ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
+                        <svg class="w-6 h-6 flex-shrink-0" width="24" height="24" style="width: 24px; height: 24px; min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        <span class="text-[15px] leading-tight">History</span>
+                        <span class="text-xs font-bold leading-tight mt-0.5">History</span>
                     </a>
 
                 @elseif(Auth::user()->isAdmin())
                     <!-- ADMIN MENU 1: Pendapatan Toko -->
                     @php $isRev = request()->routeIs('admin.revenue'); @endphp
-                    <a href="{{ route('admin.revenue') }}" class="flex flex-col items-center justify-center gap-1.5 py-2.5 {{ $isRev ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <a href="{{ route('admin.revenue') }}" class="flex flex-col items-center justify-center py-1 {{ $isRev ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
+                        <svg class="w-6 h-6 flex-shrink-0" width="24" height="24" style="width: 24px; height: 24px; min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        <span class="text-[15px] leading-tight">Pendapatan</span>
+                        <span class="text-xs font-bold leading-tight mt-0.5">Pendapatan</span>
                     </a>
 
                     <!-- ADMIN MENU 2: Catatan Keuangan -->
                     @php $isLedger = request()->routeIs('admin.ledger'); @endphp
-                    <a href="{{ route('admin.ledger') }}" class="flex flex-col items-center justify-center gap-1.5 py-2.5 {{ $isLedger ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <a href="{{ route('admin.ledger') }}" class="flex flex-col items-center justify-center py-1 {{ $isLedger ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
+                        <svg class="w-6 h-6 flex-shrink-0" width="24" height="24" style="width: 24px; height: 24px; min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                         </svg>
-                        <span class="text-[15px] leading-tight">Keuangan</span>
+                        <span class="text-xs font-bold leading-tight mt-0.5">Keuangan</span>
                     </a>
 
                     <!-- ADMIN MENU 3: Admin & Manajemen -->
                     @php $isMgmt = request()->routeIs('admin.management'); @endphp
-                    <a href="{{ route('admin.management') }}" class="flex flex-col items-center justify-center gap-1.5 py-2.5 {{ $isMgmt ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <a href="{{ route('admin.management') }}" class="flex flex-col items-center justify-center py-1 {{ $isMgmt ? 'text-[#418b24] bg-[#143728] font-black' : 'text-[#f9dd9c] hover:text-white font-bold' }}">
+                        <svg class="w-6 h-6 flex-shrink-0" width="24" height="24" style="width: 24px; height: 24px; min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                         </svg>
-                        <span class="text-[15px] leading-tight">Admin</span>
+                        <span class="text-xs font-bold leading-tight mt-0.5">Admin</span>
                     </a>
                 @endif
             </div>

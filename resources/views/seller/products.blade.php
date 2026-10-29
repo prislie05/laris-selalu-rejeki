@@ -48,23 +48,14 @@
         @foreach($products as $prod)
             <div class="bg-white p-4 rounded-xl border-2 border-[#1a4734] shadow-sm">
                 <div class="flex items-start justify-between gap-2">
-                    <div class="flex space-x-3.5 min-w-0">
-                        <div class="w-16 h-16 bg-[#f9dd9c]/40 rounded-lg border border-[#1a4734] overflow-hidden flex-shrink-0 flex items-center justify-center">
-                            @if($prod->image_url)
-                                <img src="{{ $prod->image_url }}" alt="{{ $prod->name }}" class="w-full h-full object-cover">
-                            @else
-                                <span class="font-black text-[#1a4734] text-xs">TL</span>
-                            @endif
-                        </div>
-                        <div class="min-w-0">
-                            <span class="text-xs font-black px-2.5 py-0.5 rounded bg-gray-100 text-gray-700 uppercase border border-gray-300">
-                                {{ $prod->category }}
-                            </span>
-                            <h4 class="font-bold text-xl text-[#1a4734] break-words mt-1 leading-snug">{{ $prod->name }}</h4>
-                            <p class="font-black text-2xl text-[#870903] mt-1">
-                                Rp {{ number_format($prod->price, 0, ',', '.') }}
-                            </p>
-                        </div>
+                    <div class="min-w-0 flex-1">
+                        <span class="text-xs font-black px-2.5 py-0.5 rounded bg-gray-100 text-gray-700 uppercase border border-gray-300">
+                            {{ $prod->category }}
+                        </span>
+                        <h4 class="font-bold text-xl text-[#1a4734] break-words mt-1 leading-snug">{{ $prod->name }}</h4>
+                        <p class="font-black text-2xl text-[#870903] mt-1">
+                            Rp {{ number_format($prod->price, 0, ',', '.') }}
+                        </p>
                     </div>
 
                     <div class="text-right flex-shrink-0 pl-1">

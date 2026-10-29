@@ -83,15 +83,7 @@
                             @endif
                         </div>
 
-                        <!-- Product Thumbnail & Details -->
-                        <div class="w-18 h-18 bg-[#f9dd9c]/40 rounded-lg border border-[#1a4734] overflow-hidden flex-shrink-0 flex items-center justify-center">
-                            @if($cart->product->image_url)
-                                <img src="{{ $cart->product->image_url }}" alt="{{ $cart->product->name }}" class="w-full h-full object-cover">
-                            @else
-                                <span class="font-black text-[#1a4734] text-xs">TL</span>
-                            @endif
-                        </div>
-
+                        <!-- Product Details (Tanpa Foto) -->
                         <div class="flex-1 min-w-0">
                             <div class="flex items-start justify-between gap-1">
                                 <!-- Nama Barang: 20px font-bold -->
