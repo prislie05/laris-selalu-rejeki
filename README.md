@@ -9,4 +9,4 @@ Tutorial login
    - Email: user@tokolily.com
    - Password: password
 * link website: https://toko-lily.infinityfree.me/login
-* note: all roles memiliki tampilan mobile (hp), buka dri hp klo mw tampilanny ga gepeng kek waifumu
+* note: all roles memiliki tampilan mobile (hp), buka dri hp klo mw tampilanny ga gepeng 
