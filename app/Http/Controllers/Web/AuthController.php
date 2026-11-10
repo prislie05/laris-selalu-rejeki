@@ -48,7 +48,7 @@ class AuthController extends Controller
 
         if ($user->is_banned) {
             return back()->withErrors([
-                'email' => 'Akun Anda dinonaktifkan (banned). Silakan hubungi admin Toko Lily.',
+                'email' => 'Akun Anda dinonaktifkan (banned). Silakan hubungi admin Laris Selalu Rejeki.',
             ])->withInput($request->only('email'));
         }
 
