@@ -1,12 +1,12 @@
 Tutorial login 
 1. Admin
-   - Email: admintokolily@gmail.com
+   - Email: admin.lsr@gmail.com
    - Password: 4dmin123
 3. Seller
-   - Email: sellertokolily@gmail.com
+   - Email: seller.lsr@gmail.com
    - Password: s3ller123
 5. User
-   - Email: user@tokolily.com
-   - Password: password
-* link website: https://toko-lily.infinityfree.me/login
+   - Email: user.lsr@gmail.com
+   - Password: user123
+* link website: https://laris-selau-rejeki.infinityfree.me/login
 * note: all roles memiliki tampilan mobile (hp), buka dri hp klo mw tampilanny ga gepeng 
