@@ -1,4 +1,4 @@
-@extends('layouts.mobile', ['title' => 'Login - Toko Lily'])
+@extends('layouts.mobile', ['title' => 'Login - Toko Lily', 'pageBg' => '#f9dd9c'])
 
 @section('content')
 <div class="my-auto py-6 w-full space-y-5">

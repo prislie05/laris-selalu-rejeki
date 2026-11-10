@@ -10,13 +10,18 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    @php
+        $pageBg = $pageBg ?? (Auth::check() ? '#FFFFFF' : '#f9dd9c');
+        $isWhiteBg = strtoupper($pageBg) === '#FFFFFF' || strtolower($pageBg) === 'white';
+    @endphp
+
     <style>
         html, body {
             height: 100%;
             min-height: 100%;
             min-height: 100vh;
             min-height: 100dvh;
-            background-color: #f9dd9c;
+            background-color: {{ $pageBg }};
         }
         [x-cloak] { display: none !important; }
         .no-scrollbar::-webkit-scrollbar {
@@ -28,10 +33,10 @@
         }
     </style>
 </head>
-<body class="bg-[#f9dd9c] text-[#1a4734] antialiased min-h-screen flex flex-col" x-data="{ showProfileModal: false }">
+<body class="{{ $isWhiteBg ? 'bg-[#FFFFFF]' : 'bg-[#f9dd9c]' }} text-[#1a4734] antialiased min-h-screen flex flex-col" style="background-color: {{ $pageBg }};" x-data="{ showProfileModal: false }">
 
     <!-- Universal Fluid Mobile Container (320px - 480px+) -->
-    <div class="w-full max-w-[480px] min-h-screen mx-auto overflow-x-hidden flex flex-col justify-between shadow-none border-x-2 border-[#1a4734] bg-[#f9dd9c] relative" style="min-height: 100vh; min-height: 100dvh;">
+    <div class="w-full max-w-[480px] min-h-screen mx-auto overflow-x-hidden flex flex-col justify-between shadow-none border-x-2 border-[#1a4734] {{ $isWhiteBg ? 'bg-[#FFFFFF]' : 'bg-[#f9dd9c]' }} relative" style="min-height: 100vh; min-height: 100dvh; background-color: {{ $pageBg }};">
 
         <!-- Top App Bar (Semua Role) -->
         <header class="w-full bg-[#1a4734] text-white px-4 py-3.5 sticky top-0 z-30 flex items-center justify-between border-b-2 border-[#1a4734]">

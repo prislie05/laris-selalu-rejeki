@@ -1,4 +1,4 @@
-@extends('layouts.mobile', ['title' => 'Belanja - Toko Lily'])
+@extends('layouts.mobile', ['title' => 'Belanja - Toko Lily', 'pageBg' => '#FFFFFF'])
 
 @section('content')
 <div class="py-2" x-data="{ buyNowModal: false, buyProduct: null, buyQty: 1 }">

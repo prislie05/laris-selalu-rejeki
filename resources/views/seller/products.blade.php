@@ -1,4 +1,4 @@
-@extends('layouts.mobile', ['title' => 'Manajemen Barang - Toko Lily'])
+@extends('layouts.mobile', ['title' => 'Manajemen Barang - Toko Lily', 'pageBg' => '#FFFFFF'])
 
 @section('content')
 <div class="py-2" x-data="{
@@ -39,7 +39,7 @@
             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
             </svg>
-            <span>+ Barang</span>
+            <span>Barang</span>
         </button>
     </div>
 
