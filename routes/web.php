@@ -34,6 +34,10 @@ Route::middleware('guest')->group(function () {
 
     Route::get('/reset-password', [AuthController::class, 'showResetPasswordForm'])->name('password.reset.form');
     Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update');
+
+    // Google OAuth routes (Call-to-Action Google Login untuk User, Seller, dan Admin)
+    Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('auth.google');
+    Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 });
 
 // Authenticated common routes

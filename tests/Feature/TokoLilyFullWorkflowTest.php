@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
 class TokoLilyFullWorkflowTest extends TestCase
@@ -331,5 +332,111 @@ class TokoLilyFullWorkflowTest extends TestCase
         $this->actingAs($admin)->get('/admin/revenue')->assertStatus(200);
         $this->actingAs($admin)->get('/admin/ledger')->assertStatus(200);
         $this->actingAs($admin)->get('/admin/management')->assertStatus(200);
+    }
+
+    /**
+     * Test Google OAuth redirect endpoint.
+     */
+    public function test_google_redirect_url(): void
+    {
+        $response = $this->get('/auth/google');
+        $response->assertRedirect();
+        $targetUrl = $response->headers->get('Location');
+
+        $this->assertStringContainsString('accounts.google.com/o/oauth2/v2/auth', $targetUrl);
+        $this->assertStringContainsString('client_id=', $targetUrl);
+        $this->assertStringContainsString('prompt=select_account', $targetUrl);
+    }
+
+    /**
+     * Test Google OAuth callback allows Admin to login.
+     */
+    public function test_google_callback_allows_admin_to_login(): void
+    {
+        Http::fake([
+            'https://oauth2.googleapis.com/token' => Http::response(['access_token' => 'mock-token-admin']),
+            'https://www.googleapis.com/oauth2/v3/userinfo' => Http::response([
+                'email' => 'admin@tokolily.com',
+                'name' => 'Admin Laris Selalu Rejeki',
+            ]),
+        ]);
+
+        $state = 'test-state-admin';
+        session(['google_oauth_state' => $state]);
+
+        $response = $this->get("/auth/google/callback?state={$state}&code=mock-code");
+        $response->assertRedirect(route('admin.revenue'));
+        $this->assertAuthenticated();
+        $this->assertEquals('admin', auth()->user()->role);
+    }
+
+    /**
+     * Test Google OAuth callback allows Seller to login.
+     */
+    public function test_google_callback_allows_seller_to_login(): void
+    {
+        Http::fake([
+            'https://oauth2.googleapis.com/token' => Http::response(['access_token' => 'mock-token-seller']),
+            'https://www.googleapis.com/oauth2/v3/userinfo' => Http::response([
+                'email' => 'seller@tokolily.com',
+                'name' => 'Kasir Laris Selalu Rejeki',
+            ]),
+        ]);
+
+        $state = 'test-state-seller';
+        session(['google_oauth_state' => $state]);
+
+        $response = $this->get("/auth/google/callback?state={$state}&code=mock-code");
+        $response->assertRedirect(route('seller.shop'));
+        $this->assertAuthenticated();
+        $this->assertEquals('seller', auth()->user()->role);
+    }
+
+    /**
+     * Test Google OAuth callback allows User to login.
+     */
+    public function test_google_callback_allows_user_to_login(): void
+    {
+        Http::fake([
+            'https://oauth2.googleapis.com/token' => Http::response(['access_token' => 'mock-token-user']),
+            'https://www.googleapis.com/oauth2/v3/userinfo' => Http::response([
+                'email' => 'user@tokolily.com',
+                'name' => 'Pelanggan Laris Selalu Rejeki',
+            ]),
+        ]);
+
+        $state = 'test-state-user';
+        session(['google_oauth_state' => $state]);
+
+        $response = $this->get("/auth/google/callback?state={$state}&code=mock-code");
+        $response->assertRedirect(route('user.shop'));
+        $this->assertAuthenticated();
+        $this->assertEquals('user', auth()->user()->role);
+    }
+
+    /**
+     * Test Google OAuth callback creates a new user if not registered.
+     */
+    public function test_google_callback_creates_new_user_with_appropriate_role(): void
+    {
+        Http::fake([
+            'https://oauth2.googleapis.com/token' => Http::response(['access_token' => 'mock-token-new']),
+            'https://www.googleapis.com/oauth2/v3/userinfo' => Http::response([
+                'email' => 'newcustomer@gmail.com',
+                'name' => 'Budi Baru',
+            ]),
+        ]);
+
+        $state = 'test-state-new';
+        session(['google_oauth_state' => $state]);
+
+        $response = $this->get("/auth/google/callback?state={$state}&code=mock-code");
+        $response->assertRedirect(route('user.shop'));
+        $this->assertAuthenticated();
+
+        $newUser = User::where('email', 'newcustomer@gmail.com')->first();
+        $this->assertNotNull($newUser);
+        $this->assertEquals('user', $newUser->role);
+        $this->assertEquals('Budi Baru', $newUser->name);
     }
 }

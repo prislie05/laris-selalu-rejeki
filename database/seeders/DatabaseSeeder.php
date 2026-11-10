@@ -53,6 +53,29 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
+        // Akun Google untuk Admin & Seller (sesuai tutorial login)
+        User::firstOrCreate(
+            ['email' => 'admintokolily@gmail.com'],
+            [
+                'name' => 'Admin Laris Selalu Rejeki',
+                'password' => Hash::make('4dmin123'),
+                'role' => 'admin',
+                'is_banned' => false,
+                'phone' => '081234567890',
+            ]
+        );
+
+        User::firstOrCreate(
+            ['email' => 'sellertokolily@gmail.com'],
+            [
+                'name' => 'Kasir Laris Selalu Rejeki',
+                'password' => Hash::make('s3ller123'),
+                'role' => 'seller',
+                'is_banned' => false,
+                'phone' => '081234567891',
+            ]
+        );
+
         // 2. Seed Retail Products for Laris Selalu Rejeki
         $products = [
             [
