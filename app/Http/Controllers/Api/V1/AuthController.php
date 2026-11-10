@@ -65,7 +65,7 @@ class AuthController extends BaseApiController
 
         if ($user->is_banned) {
             return $this->errorResponse('Akun Anda telah dinonaktifkan (banned).', [
-                'account' => ['Silakan hubungi administrator Toko Lily.'],
+                'account' => ['Silakan hubungi administrator Laris Selalu Rejeki.'],
             ], 403);
         }
 

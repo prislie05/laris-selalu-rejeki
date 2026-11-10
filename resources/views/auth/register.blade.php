@@ -1,4 +1,4 @@
-@extends('layouts.mobile', ['title' => 'Daftar Akun - Toko Lily', 'pageBg' => '#f9dd9c'])
+@extends('layouts.mobile', ['title' => 'Daftar Akun - Laris Selalu Rejeki', 'pageBg' => '#f9dd9c'])
 
 @section('content')
 <div class="my-auto py-6 w-full space-y-5">
@@ -6,10 +6,10 @@
     <!-- Store Brand Header -->
     <div class="bg-[#1a4734] text-white p-5 rounded-xl text-center border-2 border-[#1a4734]">
         <div class="w-16 h-16 bg-[#f9dd9c] text-[#1a4734] rounded-full mx-auto flex items-center justify-center font-black text-3xl mb-2.5 border-2 border-white">
-            TL
+            LSR
         </div>
         <h1 class="text-2xl font-black text-[#f9dd9c] tracking-wide">Hi, Selamat Datang</h1>
-        <p class="text-sm font-semibold text-gray-200 mt-0.5">Buat akun untuk mulai berbelanja di Toko Lily</p>
+        <p class="text-sm font-semibold text-gray-200 mt-0.5">Buat akun untuk mulai berbelanja di Laris Selalu Rejeki</p>
     </div>
 
     <!-- Registration Form Card -->

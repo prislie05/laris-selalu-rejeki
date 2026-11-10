@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         $admin = User::firstOrCreate(
             ['email' => 'admin@tokolily.com'],
             [
-                'name' => 'Admin Toko Lily',
+                'name' => 'Admin Laris Selalu Rejeki',
                 'password' => Hash::make('password'),
                 'role' => 'admin',
                 'is_banned' => false,
@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // 2. Seed Retail Products for Toko Lily
+        // 2. Seed Retail Products for Laris Selalu Rejeki
         $products = [
             [
                 'name' => 'Beras Ramos Super 5kg',
@@ -164,7 +164,7 @@ class DatabaseSeeder extends Seeder
                 'type' => 'income',
                 'category' => 'Modal Awal',
                 'amount' => 5000000,
-                'description' => 'Penyetoran modal awal kas operasional Toko Lily',
+                'description' => 'Penyetoran modal awal kas operasional Laris Selalu Rejeki',
                 'transaction_date' => Carbon::now()->subDays(14)->toDateString(),
             ],
             [

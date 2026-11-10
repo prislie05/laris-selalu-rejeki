@@ -1,4 +1,4 @@
-@extends('layouts.mobile', ['title' => 'Riwayat Pesanan - Toko Lily', 'pageBg' => '#FFFFFF'])
+@extends('layouts.mobile', ['title' => 'Riwayat Pesanan - Laris Selalu Rejeki', 'pageBg' => '#FFFFFF'])
 
 @section('content')
 <div class="py-2">
@@ -59,7 +59,7 @@
                 <a 
                     href="{{ route('user.receipt', $ord->id) }}" 
                     class="bg-[#1a4734] text-[#f9dd9c] hover:bg-[#143728] active:scale-95 px-4 min-h-[50px] py-2.5 rounded-xl font-black text-lg flex items-center space-x-2 transition-all shadow-sm"
-                    title="Unduh Struk Resmi Toko Lily"
+                    title="Unduh Struk Resmi Laris Selalu Rejeki"
                 >
                     <svg class="w-5 h-5 text-[#f9dd9c] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>

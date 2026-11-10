@@ -101,7 +101,7 @@ class AuthController extends Controller
             newValues: ['method' => 'Web Registration Auto-Login']
         );
 
-        return redirect()->route('user.shop')->with('success', "Pendaftaran berhasil! Selamat berbelanja di Toko Lily.");
+        return redirect()->route('user.shop')->with('success', "Pendaftaran berhasil! Selamat berbelanja di Laris Selalu Rejeki.");
     }
 
     /**

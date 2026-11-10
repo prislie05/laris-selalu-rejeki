@@ -1,4 +1,4 @@
-@extends('layouts.mobile', ['title' => 'Riwayat Penjualan & Struk - Toko Lily', 'pageBg' => '#FFFFFF'])
+@extends('layouts.mobile', ['title' => 'Riwayat Penjualan & Struk - Laris Selalu Rejeki', 'pageBg' => '#FFFFFF'])
 
 @section('content')
 <div class="py-2">
@@ -28,7 +28,7 @@
 
             <!-- Struk Thermal Visual Card -->
             <div class="bg-gray-50 p-4 rounded-lg border-2 border-dashed border-gray-400 font-mono text-sm space-y-2 mb-4">
-                <div class="text-center font-black text-base text-[#1a4734]">TOKO LILY - BUKTI PEMBAYARAN</div>
+                <div class="text-center font-black text-base text-[#1a4734]">Laris Selalu Rejeki - BUKTI PEMBAYARAN</div>
                 <div class="text-center text-xs text-gray-600">No: {{ $highlightOrder->order_number }}</div>
                 <div class="border-b-2 border-dashed border-gray-400 my-2"></div>
                 

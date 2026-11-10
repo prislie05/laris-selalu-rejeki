@@ -38,7 +38,7 @@
     </style>
 </head>
 <body>
-    <div class="text-center font-bold" style="font-size: 14px;">TOKO LILY</div>
+    <div class="text-center font-bold" style="font-size: 14px;">Laris Selalu Rejeki</div>
     <div class="text-center" style="font-size: 10px;">Jl. Sembako Makmur No. 88, Lily City</div>
     <div class="text-center" style="font-size: 10px;">Telp / WA: 0823-2866-5123</div>
     

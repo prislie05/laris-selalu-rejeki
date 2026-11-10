@@ -1,4 +1,4 @@
-@extends('layouts.mobile', ['title' => 'Belanja - Toko Lily', 'pageBg' => '#FFFFFF'])
+@extends('layouts.mobile', ['title' => 'Belanja - Laris Selalu Rejeki', 'pageBg' => '#FFFFFF'])
 
 @section('content')
 <div class="py-2" x-data="{ buyNowModal: false, buyProduct: null, buyQty: 1 }">
@@ -79,7 +79,7 @@
 
                     <!-- Deskripsi: 18px leading-relaxed -->
                     <p class="text-base text-gray-700 leading-relaxed mt-1 line-clamp-2">
-                        {{ $prod->description ?? 'Barang kebutuhan harian pilihan Toko Lily' }}
+                        {{ $prod->description ?? 'Barang kebutuhan harian pilihan Laris Selalu Rejeki' }}
                     </p>
 
                     <!-- Harga: 24px - 28px font-extrabold -->

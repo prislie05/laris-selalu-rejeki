@@ -1,4 +1,4 @@
-@extends('layouts.mobile', ['title' => 'Keranjang Belanja - Toko Lily', 'pageBg' => '#FFFFFF'])
+@extends('layouts.mobile', ['title' => 'Keranjang Belanja - Laris Selalu Rejeki', 'pageBg' => '#FFFFFF'])
 
 @section('content')
 <div class="py-2" x-data="{
@@ -46,7 +46,7 @@
                 </svg>
             </div>
             <h3 class="font-black text-2xl text-[#1a4734]">Keranjang Masih Kosong</h3>
-            <p class="text-lg text-gray-700 mt-2 mb-6">Pilih barang kebutuhan harian Anda di etalase Toko Lily.</p>
+            <p class="text-lg text-gray-700 mt-2 mb-6">Pilih barang kebutuhan harian Anda di etalase Laris Selalu Rejeki.</p>
             <a href="{{ route('user.shop') }}" class="inline-block bg-[#418b24] text-white px-6 min-h-[50px] py-3 rounded-xl font-black text-lg uppercase hover:opacity-90 active:scale-95 transition-all">
                 Mulai Belanja Sekarang
             </a>

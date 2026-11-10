@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>{{ $title ?? 'Toko Lily' }}</title>
+    <title>{{ $title ?? 'Laris Selalu Rejeki' }}</title>
     
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
@@ -42,7 +42,7 @@
         <header class="w-full bg-[#1a4734] text-white px-4 py-3.5 sticky top-0 z-30 flex items-center justify-between border-b-2 border-[#1a4734]">
             <div class="flex items-center space-x-2.5 min-w-0">
                 <a href="{{ url('/') }}" class="font-black text-2xl tracking-wide text-[#f9dd9c] flex items-center space-x-1.5 truncate">
-                    <span>TOKO LILY</span>
+                    <span>Laris Selalu Rejeki</span>
                 </a>
                 <span class="text-xs px-2.5 py-1 rounded font-black uppercase flex-shrink-0 {{ Auth::user()?->role === 'admin' ? 'bg-[#870903] text-white' : (Auth::user()?->role === 'seller' ? 'bg-[#e90c00] text-white' : 'bg-[#418b24] text-white') }}">
                     {{ Auth::user()?->role ?? 'Tamu' }}
