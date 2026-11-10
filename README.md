@@ -8,5 +8,6 @@ Tutorial login
 5. User
    - Email: user.lsr@gmail.com
    - Password: user123
+   - user bisa login pakai email yang mereka punya di masing-masing device
 * link website: https://laris-selau-rejeki.infinityfree.me/login
 * note: all roles memiliki tampilan mobile (hp), buka dri hp klo mw tampilanny ga gepeng 
