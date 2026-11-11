@@ -6,7 +6,7 @@ Tutorial login
    - Email: seller.lsr@gmail.com
    - Password: s3ller123
 5. User
-   - Email: user.lsr@gmail.com
+   - Email: user123@gmail.com
    - Password: user123
    - user bisa login pakai email yang mereka punya di masing-masing device
 * link website: https://laris-selau-rejeki.infinityfree.me/login
